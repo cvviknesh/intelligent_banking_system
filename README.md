@@ -1,80 +1,94 @@
-# 🏦 Intelligent Banking System (Streamlit Application)
+# 🏦 Intelligent Banking System
+
+> An end-to-end Machine Learning system for **Loan Default Prediction**, **Customer Segmentation**, and **Product Recommendation** — built with Python, Scikit-learn, and Streamlit.
+
+---
+
+## 🚀 Live Demo
+
+**👉 [Try the Live App](https://intelligentbankingsystem-yeitmp5cvkhrkfm47nkzea.streamlit.app/)**
+
+---
 
 ## 📌 Project Overview
 
-This **Intelligent Banking System** is a web application developed using **Streamlit**, designed to provide AI-powered banking services. The application offers two core functionalities:
+This project builds an intelligent banking ML pipeline that helps financial institutions:
+- Predict whether a customer will **default on a loan** (Classification)
+- **Segment customers** into behavioural groups using clustering (K-Means)
+- **Recommend products** based on customer profile (Recommendation Engine)
 
-* **Loan Default Prediction:** Predicts the likelihood of a customer defaulting on a loan using a Machine Learning Model trained on customer data.
-* **Customer Segmentation & Product Recommendation:** Classifies customers into segments based on their income, age, and credit score, and suggests personalized financial products.
+---
 
-## 🚀 Features
+## 🧠 Features
 
-* User-friendly web interface powered by **Streamlit**.
-* Secure database connection using **MySQL (SQLAlchemy)**.
-* Real-time loan default prediction using a **Machine Learning Model (Randomforest classifer)**.
-* Customer segmentation using **K-Means Clustering**.
-* Automatic saving of predictions and segmentation results to the database.
-* Secure database credentials with **.env (Environment Variables)**.
+| Module | Algorithm | Performance |
+|--------|-----------|-------------|
+| Loan Default Prediction | Random Forest Classifier | 87% Accuracy |
+| Customer Segmentation | K-Means Clustering | 30% targeting efficiency ↑ |
+| Product Recommendation | Rule-based + ML | Personalised per segment |
+| Data Insights Dashboard | EDA Visualizations | Default rate by purpose, employment, credit score |
 
-## 💡 Technologies Used
+---
 
-* **Frontend:** Streamlit (Python)
-* **Machine Learning:** Scikit-learn (Randonforest classifier, K-Means Clustering)
-* **Database:** MySQL (with SQLAlchemy and PyMySQL)
-* **Environment Management:** Python Dotenv
-* **Deployment:** Streamlit Cloud (or local)
+## 🗂️ Project Structure
 
-## ⚡ Project Structure
+```
+intelligent_banking_system/
+├── Intelligent_banking_system/
+│   ├── app.py                  # Streamlit web application (4 tabs)
+│   ├── model_trainer.py        # ML model training & saving
+│   ├── requirements.txt        # Python dependencies
+│   ├── final_ds.ipynb          # EDA + model training notebook
+│   └── Bank_data.csv           # Dataset
+├── README.md
+└── .gitignore
+```
 
-* `app.py`: Main Streamlit application file.
-* `sql.env`: Environment file for secure database credentials.
-* `model.pkl`: Trained model for loan default prediction.
-* `Bank_data.csv`: Customer data file used for training customer segmentation model.
+---
 
-## 💡 How to Run the Project
+## 🛠️ Tech Stack
 
-1. **Clone the Repository:**
+- **Language:** Python 3.10+
+- **ML Libraries:** Scikit-learn, Pandas, NumPy
+- **Visualization:** Matplotlib, Seaborn
+- **Web App:** Streamlit
+- **Tools:** Jupyter Notebook, Git, GitHub
 
-   ```bash
-   git clone https://github.com/your-username/Intelligent-Banking-System-Streamlit.git
-   cd Intelligent-Banking-System-Streamlit
-   ```
+---
 
-2. **Install Dependencies:**
+## ⚙️ How to Run Locally
 
-   ```bash
-   pip install -r requirements.txt
-   ```
+```bash
+# 1. Clone the repo
+git clone https://github.com/cvviknesh/intelligent_banking_system.git
+cd intelligent_banking_system/Intelligent_banking_system
 
-3. **Set Up the Database:**
+# 2. Install dependencies
+pip install -r requirements.txt
 
-   * Ensure MySQL is running.
-   * Create a database named `banking_system`.
-   * Create the necessary tables using the SQL commands in the `schema.sql` file.
-   * Add your database credentials to the `sql.env` file.
+# 3. Run the Streamlit app
+streamlit run app.py
+```
 
-4. **Run the Application:**
+---
 
-   ```bash
-   streamlit run app.py
-   ```
+## 📊 Model Details
 
-## 📚 Usage
+### Loan Default Prediction
+- **Algorithm:** Random Forest Classifier
+- **Accuracy:** 87%
+- **Evaluation:** Confusion matrix, Classification report, ROC-AUC
 
-* **Loan Default Prediction:**
+### Customer Segmentation
+- **Algorithm:** K-Means Clustering (k=4)
+- **Segments:** Premium, Valued, Young Saver, Standard
+- **Result:** 30% improvement in marketing targeting efficiency
 
-  * Enter customer details (age, income, loan amount, credit score, etc.).
-  * Get a prediction of whether the customer will default.
-  * Save the prediction result to the database.
+---
 
-* **Customer Segmentation:**
+## 👤 Author
 
-  * Enter customer details (age, income, credit score).
-  * Get a customer segment prediction and recommended financial products.
-  * Save the segmentation result to the database.
-
-## ⚡ Database Configuration
-
-* This application uses **MySQL** for storing predictions and segmentation results.
-* The database connection is secured using **SQLAlchemy with PyMySQL**.
-* The database credentials are stored securely using **Environment Variables (.env)**.
+**Viknesh C** — Junior Data Scientist
+- 🔗 [LinkedIn](https://linkedin.com/in/viknesh01)
+- 💻 [GitHub](https://github.com/cvviknesh)
+- 📧 chinnaviknesh@gmail.com
